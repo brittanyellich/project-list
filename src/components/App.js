@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import '../styles/App.css';
+import Button from './Button';
 
 class App extends Component {
   constructor(props) {
@@ -11,9 +12,12 @@ class App extends Component {
 
   render() {
     const { title } = this.state;
+    const [buttonText] = useState();
     return (
       <div className="app">
         <h1>{title}</h1>
+        <p>{buttonText}</p>
+        <Button />
       </div>
     );
   }
