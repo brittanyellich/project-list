@@ -1,26 +1,28 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
+import { Segment, Grid } from 'semantic-ui-react';
 import '../styles/App.css';
-import Button from './Button';
+import AddNewProjectModal from './AddNewProjectModal';
+import ProjectList from './ProjectList';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: 'Hello, World!',
-    };
-  }
 
-  render() {
-    const { title } = this.state;
-    const [buttonText] = useState();
-    return (
-      <div className="app">
-        <h1>{title}</h1>
-        <p>{buttonText}</p>
-        <Button />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <Grid stackable>
+      <Grid.Row>
+        <Grid.Column width={3}>
+        </Grid.Column>
+        <Grid.Column width={10}>
+          <Segment raised className="app">
+            <h1>Project List</h1>
+            <ProjectList />
+            <AddNewProjectModal />
+          </Segment>
+        </Grid.Column>
+        <Grid.Column width={3}>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+  );
 }
 
 export default App;
